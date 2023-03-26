@@ -1,0 +1,42 @@
+        |    non-strict              |  stict
+        |                            |
+        |                            |
+browser |         (FIRST)            |     (SECOND)
+        |                            |
+        |                            |
+________|____________________________|______________________________________                                  
+        |                            |
+        |                            |
+        |                            |
+Node.js |         (THIRD)            |       (FOURTH)
+        |                            |
+        |                            |
+        |                            |
+        |                            |
+                                    
+//FIRST
+--> console.log(this)= window object
+--> function-log= window object
+--> object.function = object itself
+--> object.function.function = window object
+
+
+//SECOND
+--> console.log(this)= window object
+--> function-log= undefined
+--> object.function = object itself
+--> object.function.function = \undefined
+
+
+//Third 
+--> console.log(this)= {}
+--> function-log= global object
+--> object.function = object itself
+--> object.function.function = global object
+
+
+//FOURTH
+--> console.log(this)= {}
+--> function-log= undefined
+--> object.function = object itself
+--> object.function.function = undefined
